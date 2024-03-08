@@ -168,10 +168,122 @@ void render_layer_state(void) {
     oled_write_P(PSTR("-----"), false);
 }
 
+void render_layer_state2(void) {
+    // example
+    // oled_write_P(PSTR("-----"), false);
+    // oled_write_P(PSTR("     "), false);
+    // oled_write_P(PSTR("K:02 "), false);
+    // oled_write_P(PSTR("     "), false);
+    // oled_write_P(PSTR("dkrsv"), false);
+    // oled_write_P(PSTR("     "), false);
+    // oled_write_P(PSTR("     "), false);
+    // oled_write_P(PSTR("LAYER"), false);
+    // oled_write_P(PSTR("     "), false);
+    // oled_write_P(PSTR("Base "), false);
+    // oled_write_P(PSTR("     "), false);
+    // oled_write_P(PSTR("     "), false);
+    // oled_write_P(PSTR("MAC  "), false); // if swap_lctl_lgui enabled
+    // oled_write_P(PSTR("CPSLK"), false); // if caps_lock enabled
+    // oled_write_P(PSTR("     "), false);
+    // oled_write_P(PSTR("-----"), false);
+    // return;
+
+    // Print current mode
+    oled_write_P(PSTR("-----"), false);
+
+    oled_write_P(PSTR("     "), false);
+    oled_write_P(PSTR("K:02 "), false);
+    oled_write_P(PSTR("     "), false);
+    oled_write_P(PSTR("dkrsv"), false);
+
+    oled_write_P(PSTR("     "), false);
+    oled_write_P(PSTR("     "), false);
+
+    // Print current layer
+    oled_write_P(PSTR("LAYER"), false);
+    oled_write_P(PSTR("     "), false);
+    switch (get_highest_layer(layer_state)) {
+        case _BASE:
+            oled_write_P(PSTR("Base "), false);
+            break;
+
+        case _GAMES:
+            oled_write_P(PSTR("Games"), false);
+            break;
+        case _RAISE:
+            oled_write_P(PSTR("Raise"), false);
+            break;
+        case _LOWER:
+            oled_write_P(PSTR("Lower"), false);
+            break;
+        case _ADJUST:
+            oled_write_P(PSTR("Adjst"), false);
+            break;
+
+        case _SECOND:
+            oled_write_P(PSTR("Scnd "), false);
+            break;
+        case _THIRD:
+            oled_write_P(PSTR("Third"), false);
+            break;
+        case _FOUR:
+            oled_write_P(PSTR("Four "), false);
+            break;
+        case _FIVE:
+            oled_write_P(PSTR("Five "), false);
+            break;
+        case _SIX:
+            oled_write_P(PSTR("Six  "), false);
+            break;
+        case _SEVEN:
+            oled_write_P(PSTR("Seven"), false);
+            break;
+        case _EIGHT:
+            oled_write_P(PSTR("Eight"), false);
+            break;
+        case _NINE:
+            oled_write_P(PSTR("Nine "), false);
+            break;
+        case _TEN:
+            oled_write_P(PSTR("Ten  "), false);
+            break;
+        case _ELEVEN:
+            oled_write_P(PSTR("Elevn"), false);
+            break;
+        case _TWELVE:
+            oled_write_P(PSTR("Twlve"), false);
+            break;
+        default:
+            oled_write_P(PSTR("Undef"), false);
+    }
+
+    oled_write_P(PSTR("     "), false);
+    oled_write_P(PSTR("     "), false);
+
+    if (keymap_config.swap_lctl_lgui) {
+        oled_write_P(PSTR("Mac  "), false);
+    } else {
+        oled_write_P(PSTR("     "), false);
+    }
+
+    led_t led_usb_state = host_keyboard_led_state();
+    if (led_usb_state.caps_lock) {
+        oled_write_P(PSTR("CPSLK"), false);
+    } else {
+        oled_write_P(PSTR("     "), false);
+    }
+
+    oled_write_P(PSTR("     "), false);
+
+    oled_write_P(PSTR("-----"), false);
+}
+
 // Used to draw on to the oled screen
 bool oled_task_user(void) {
     if (is_keyboard_master()) {
-        render_layer_state();
+        // render_layer_state();
+        render_layer_state2();
+
         // if (!isGamingMode()) {
         //     render_layer_state();
         // }
