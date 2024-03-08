@@ -55,42 +55,68 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 }
 
 void render_layer_state(void) {
+    // example
+    // oled_write_P(PSTR("     "), false);
+    // oled_write_P(PSTR("K:02 "), false);
+    // oled_write_P(PSTR("     "), false);
+    // oled_write_P(PSTR("dkrsv"), false);
+    // oled_write_P(PSTR("     "), false);
+    // oled_write_P(PSTR("     "), false);
+    // oled_write_P(PSTR("MODE "), false);
+    // oled_write_P(PSTR("WIN  "), false);
+    // oled_write_P(PSTR("     "), false);
+    // oled_write_P(PSTR("     "), false);
+    // oled_write_P(PSTR("LAYER"), false);
+    // oled_write_P(PSTR("Base "), false);
+    // oled_write_P(PSTR("     "), false);
+    // oled_write_P(PSTR("     "), false);
+    // oled_write_P(PSTR("CPSLK"), false);
+    // oled_write_P(PSTR("     "), false);
+    // return;
+
     // Print current mode
-    oled_write_ln_P(PSTR("K:02\n"), false);
-    /* oled_write_P(PSTR("\n"), false); */
-    oled_write_ln_P(PSTR("v3.1\n"), false);
-    oled_write_P(PSTR("\n"), false);
-    oled_write_ln_P(PSTR("MODE\n"), false);
+    oled_write_P(PSTR("-----"), false);
+
+    oled_write_P(PSTR("K:02 "), false);
+    oled_write_P(PSTR("     "), false);
+    oled_write_P(PSTR("dkrsv"), false);
+
+    oled_write_P(PSTR("     "), false);
+    oled_write_P(PSTR("     "), false);
+
+    oled_write_P(PSTR("MODE "), false);
     if (keymap_config.swap_lctl_lgui) {
-        oled_write_ln_P(PSTR("Mac"), false);
+        oled_write_P(PSTR("Mac  "), false);
     } else {
-        oled_write_ln_P(PSTR("Win"), false);
+        oled_write_P(PSTR("Win  "), false);
     }
 
-    oled_write_P(PSTR("\n\n"), false);
+    oled_write_P(PSTR("     "), false);
+    oled_write_P(PSTR("     "), false);
+
     // Print current layer
-    oled_write_ln_P(PSTR("LAYER"), false);
+    oled_write_P(PSTR("LAYER"), false);
     switch (get_highest_layer(layer_state)) {
         case _BASE:
-            oled_write_P(PSTR("Base\n"), false);
+            oled_write_P(PSTR("Base "), false);
             break;
         case _RAISE:
-            oled_write_P(PSTR("Raise"), false);
+            oled_write_P(PSTR("Games"), false);
             break;
         case _LOWER:
-            oled_write_P(PSTR("Lower"), false);
+            oled_write_P(PSTR("Scnd "), false);
             break;
         case _ADJUST:
-            oled_write_P(PSTR("Adjst"), false);
+            oled_write_P(PSTR("Third"), false);
             break;
         case _FOUR:
-            oled_write_P(PSTR("Four\n"), false);
+            oled_write_P(PSTR("Four "), false);
             break;
         case _FIVE:
-            oled_write_P(PSTR("Five\n"), false);
+            oled_write_P(PSTR("Five "), false);
             break;
         case _SIX:
-            oled_write_P(PSTR("Six\n"), false);
+            oled_write_P(PSTR("Six  "), false);
             break;
         case _SEVEN:
             oled_write_P(PSTR("Seven"), false);
@@ -99,34 +125,38 @@ void render_layer_state(void) {
             oled_write_P(PSTR("Eight"), false);
             break;
         case _NINE:
-            oled_write_P(PSTR("Nine\n"), false);
+            oled_write_P(PSTR("Nine "), false);
             break;
-         case _TEN:
-            oled_write_P(PSTR("Ten\n"), false);
+        case _TEN:
+            oled_write_P(PSTR("Ten  "), false);
             break;
-         case _ELEVEN:
+        case _ELEVEN:
             oled_write_P(PSTR("Elevn"), false);
             break;
-         case _TWELVE:
+        case _TWELVE:
             oled_write_P(PSTR("Twlve"), false);
             break;
-         case _THIRTEEN:
+        case _THIRTEEN:
             oled_write_P(PSTR("Thrtn"), false);
             break;
-         case _FOURTEEN:
-            oled_write_P(PSTR("Frtn\n"), false);
+        case _FOURTEEN:
+            oled_write_P(PSTR("Lower"), false);
             break;
-         case _FIFTEEN:
-            oled_write_P(PSTR("Fiftn"), false);
+        case _FIFTEEN:
+            oled_write_P(PSTR("Upper"), false);
             break;
         default:
-            oled_write_ln_P(PSTR("Undef"), false);
+            oled_write_P(PSTR("Adjst"), false);
     }
-    oled_write_P(PSTR("\n"), false);
-    led_t led_usb_state = host_keyboard_led_state();
-    oled_write_ln_P(PSTR("CPSLK"), led_usb_state.caps_lock);
-}
 
+    oled_write_P(PSTR("     "), false);
+    oled_write_P(PSTR("     "), false);
+
+    led_t led_usb_state = host_keyboard_led_state();
+    oled_write_P(PSTR("CPSLK"), led_usb_state.caps_lock);
+
+    oled_write_P(PSTR("-----"), false);
+}
 
 // Used to draw on to the oled screen
 bool oled_task_user(void) {
