@@ -107,47 +107,52 @@ char *get_highest_layer_name(void) {
     return get_layer_name(get_highest_layer(layer_state));
 }
 
+void oled_print(char *str, bool invert) {
+    oled_write_P(PSTR(str), invert);
+}
+
 void render_layer_state(void) {
     // example
-    // oled_write_P(PSTR("-----"), false);
-    // oled_write_P(PSTR("     "), false);
-    // oled_write_P(PSTR("K:02 "), false);
-    // oled_write_P(PSTR("     "), false);
-    // oled_write_P(PSTR("dkrsv"), false);
-    // oled_write_P(PSTR("     "), false);
-    // oled_write_P(PSTR("     "), false);
-    // oled_write_P(PSTR("LAYER"), false);
-    // oled_write_P(PSTR("     "), false);
-    // oled_write_P(PSTR("Base "), false);
-    // oled_write_P(PSTR("     "), false);
-    // oled_write_P(PSTR("     "), false);
-    // oled_write_P(PSTR("CPSLK"), false); // if caps_lock enabled
-    // oled_write_P(PSTR("     "), false);
-    // oled_write_P(PSTR("MAC  "), false); // if swap_lctl_lgui enabled
-    // oled_write_P(PSTR("-----"), false);
+    // oled_print("-----", false);
+    // oled_print("     ", false);
+    // oled_print("K:02 ", false);
+    // oled_print("     ", false);
+    // oled_print("dkrsv", false);
+    // oled_print("     ", false);
+    // oled_print("     ", false);
+    // oled_print("LAYER", false);
+    // oled_print("     ", false);
+    // oled_print("Base ", false);
+    // oled_print("     ", false);
+    // oled_print("     ", false);
+    // oled_print("CPSLK", false); // if caps_lock enabled
+    // oled_print("     ", false);
+    // oled_print("MAC  ", false); // if swap_lctl_lgui enabled
+    // oled_print("-----", false);
+    // return;
 
-    oled_write_P(PSTR("-----"), false);
-    oled_write_P(PSTR("     "), false);
+    oled_print("-----", false);
+    oled_print("     ", false);
 
-    oled_write_P(PSTR("K:02 "), false);
-    oled_write_P(PSTR("     "), false);
-    oled_write_P(PSTR("dkrsv"), false);
+    oled_print("K:02 ", false);
+    oled_print("     ", false);
+    oled_print("dkrsv", false);
 
-    oled_write_P(PSTR("     "), false);
-    oled_write_P(PSTR("     "), false);
+    oled_print("     ", false);
+    oled_print("     ", false);
 
-    oled_write_P(PSTR("LAYER"), false);
-    oled_write_P(PSTR("     "), false);
-    oled_write_P(PSTR(get_highest_layer_name()), false);
+    oled_print("LAYER", false);
+    oled_print("     ", false);
+    oled_print(get_highest_layer_name(), false);
 
-    oled_write_P(PSTR("     "), false);
-    oled_write_P(PSTR("     "), false);
+    oled_print("     ", false);
+    oled_print("     ", false);
 
-    oled_write_P(PSTR(host_keyboard_led_state().caps_lock ? "CPSLK" : "     "), false);
-    oled_write_P(PSTR("     "), false);
-    oled_write_P(PSTR(keymap_config.swap_lctl_lgui ? "MAC  " : "     "), false);
+    oled_print(host_keyboard_led_state().caps_lock ? "CPSLK" : "     ", false);
+    oled_print("     ", false);
+    oled_print(keymap_config.swap_lctl_lgui ? "MAC  " : "     ", false);
 
-    oled_write_P(PSTR("-----"), false);
+    oled_print("-----", false);
 }
 
 // Used to draw on to the oled screen
