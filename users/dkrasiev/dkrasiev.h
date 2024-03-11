@@ -26,6 +26,7 @@
 #define PREVWRD LCTL(KC_LEFT)
 #define NEXTWRD LCTL(KC_RIGHT)
 #define LANG    LGUI(KC_SPC)
+#define SEARCH  LALT(KC_SPC)
 #define CT_Q    LCTL_T(KC_Q)
 #define CT_CM   RCTL_T(KC_COMM)
 #define SF_Z    LSFT_T(KC_Z)
