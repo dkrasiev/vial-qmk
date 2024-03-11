@@ -1,38 +1,38 @@
 #pragma once
 #include "quantum.h"
 
-#define _BASE 0
-#define _GAMES 1
+#define _BASE   0
+#define _GAMES  1
 #define _SECOND 2
-#define _THIRD 3
-#define _FOUR 4
-#define _FIVE 5
-#define _SIX 6
-#define _SEVEN 7
-#define _EIGHT 8
-#define _NINE 9
-#define _TEN 10
+#define _THIRD  3
+#define _FOUR   4
+#define _FIVE   5
+#define _SIX    6
+#define _SEVEN  7
+#define _EIGHT  8
+#define _NINE   9
+#define _TEN    10
 #define _ELEVEN 11
 #define _TWELVE 12
-#define _LOWER 13
-#define _RAISE 14
+#define _LOWER  13
+#define _RAISE  14
 #define _ADJUST 15
 
-#define BASE      DF(_BASE)
-#define GAMES     TG(_GAMES)
-#define RAISE     MO(_RAISE)
-#define LOWER     MO(_LOWER)
-#define ADJUST    MO(_ADJUST)
-#define PREVWRD   LCTL(KC_LEFT)
-#define NEXTWRD   LCTL(KC_RIGHT)
-#define LANG      LGUI(KC_SPC)
-#define CT_Q  LCTL_T(KC_Q)
-#define CT_CM RCTL_T(KC_COMM)
-#define SF_Z  LSFT_T(KC_Z)
-#define SF_SS RSFT_T(KC_SLSH)
-#define AL_X  LALT_T(KC_X)
-#define AL_DT RALT_T(KC_DOT)
-#define LO_TB LT(LOWER, KC_TAB)
+#define BASE    DF(_BASE)
+#define GAMES   TG(_GAMES)
+#define RAISE   MO(_RAISE)
+#define LOWER   MO(_LOWER)
+#define ADJUST  MO(_ADJUST)
+#define PREVWRD LCTL(KC_LEFT)
+#define NEXTWRD LCTL(KC_RIGHT)
+#define LANG    LGUI(KC_SPC)
+#define CT_Q    LCTL_T(KC_Q)
+#define CT_CM   RCTL_T(KC_COMM)
+#define SF_Z    LSFT_T(KC_Z)
+#define SF_SS   RSFT_T(KC_SLSH)
+#define AL_X    LALT_T(KC_X)
+#define AL_DT   RALT_T(KC_DOT)
+#define LO_TB   LT(LOWER, KC_TAB)
 
 enum custom_keycodes {
     NEXTSEN = QK_KB,
