@@ -137,7 +137,7 @@ void render_layer_state(void) {
 
     oled_print("K:02 ", false);
     oled_print("     ", false);
-    oled_print("dkrsv", false);
+    oled_print("HMR  ", false);
 
     oled_print("     ", false);
     oled_print("     ", false);
