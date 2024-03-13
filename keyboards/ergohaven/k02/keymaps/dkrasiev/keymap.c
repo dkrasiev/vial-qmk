@@ -1,11 +1,6 @@
 #include QMK_KEYBOARD_H
 #include "dkrasiev.h"
-// #include "oled/bongocat.c"
-// #include "oled/ergohaven_light.c"
 #include "oled/ergohaven_dark.c"
-// #include "font_block.h"
-// #include "game/game.h"
-// #include "layers.c"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
@@ -54,8 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     if (!is_keyboard_master()) {
-        return OLED_ROTATION_180; // bongocat, ergohaven_dark/light
-        // return OLED_ROTATION_270; // luna
+        return OLED_ROTATION_180;
     } else {
         return OLED_ROTATION_270;
     }
@@ -113,25 +107,6 @@ void oled_print(char *str, bool invert) {
 }
 
 void render_layer_state(void) {
-    // example
-    // oled_print("-----", false);
-    // oled_print("     ", false);
-    // oled_print("K:02 ", false);
-    // oled_print("     ", false);
-    // oled_print("dkrsv", false);
-    // oled_print("     ", false);
-    // oled_print("     ", false);
-    // oled_print("LAYER", false);
-    // oled_print("     ", false);
-    // oled_print("Base ", false);
-    // oled_print("     ", false);
-    // oled_print("     ", false);
-    // oled_print("CPSLK", false); // if caps_lock enabled
-    // oled_print("     ", false);
-    // oled_print("MAC  ", false); // if swap_lctl_lgui enabled
-    // oled_print("-----", false);
-    // return;
-
     oled_print("-----", false);
     oled_print("     ", false);
 
@@ -156,30 +131,14 @@ void render_layer_state(void) {
     oled_print("-----", false);
 }
 
-// Used to draw on to the oled screen
 bool oled_task_user(void) {
     if (is_keyboard_master()) {
         render_layer_state();
-
-        // if (!isGamingMode()) {
-        //     render_layer_state();
-        // }
     } else {
-        // render_bongocat(); // bongocat
-        // render_luna_status(); // luna
-        // ergohaven_light_draw();
         ergohaven_dark_draw();
     }
 
     return false;
 }
-
-// void matrix_scan_keymap(void) {
-//     if (isGamingMode()) {
-//         if (countMainTimer() > 0) {
-//             game_main();
-//         }
-//     }
-// }
 
 #endif
