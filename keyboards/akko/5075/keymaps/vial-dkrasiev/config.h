@@ -17,3 +17,5 @@
 #define SFT_K RSFT_T(KC_K)
 #define ALT_L LALT_T(KC_L)
 #define GUI_SCLN RGUI_T(KC_SCLN)
+
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
