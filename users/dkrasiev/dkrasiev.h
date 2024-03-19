@@ -1,24 +1,28 @@
 #pragma once
 #include "quantum.h"
 
-#define _BASE 0
-#define _GAMES 1
-#define _SECOND 2
-#define _THIRD 3
-#define _FOUR 4
-#define _FIVE 5
-#define _SIX 6
-#define _SEVEN 7
-#define _EIGHT 8
-#define _NINE 9
-#define _TEN 10
+#define _BASE   0
+
+#define _HMR    1
+#define _GAMES  2
+
+#define _THIRD  3
+#define _FOUR   4
+#define _FIVE   5
+#define _SIX    6
+#define _SEVEN  7
+#define _EIGHT  8
+#define _NINE   9
+#define _TEN    10
 #define _ELEVEN 11
 #define _TWELVE 12
-#define _LOWER 13
-#define _RAISE 14
+#define _LOWER  13
+
+#define _RAISE  14
 #define _ADJUST 15
 
 #define BASE DF(_BASE)
+#define HMR TG(_HMR)
 #define GAMES TG(_GAMES)
 #define RAISE MO(_RAISE)
 #define LOWER MO(_LOWER)
