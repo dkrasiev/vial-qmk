@@ -3,7 +3,7 @@
 
 #define _BASE   0
 
-#define _HMR    1
+#define _HRM    1
 #define _GAMES  2
 
 #define _THIRD  3
@@ -22,7 +22,7 @@
 #define _ADJUST 15
 
 #define BASE DF(_BASE)
-#define HMR TG(_HMR)
+#define HRM TG(_HRM)
 #define GAMES TG(_GAMES)
 #define RAISE MO(_RAISE)
 #define LOWER MO(_LOWER)

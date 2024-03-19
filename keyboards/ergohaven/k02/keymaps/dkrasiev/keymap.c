@@ -11,7 +11,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                           KC_LGUI, KC_LALT, KC_LCTL, LOWER  , KC_SPC ,          KC_ENT , RAISE  , KC_RCTL, KC_RALT, KC_RGUI
     ),
 
-    [_HMR] = LAYOUT(
+    [_HRM] = LAYOUT(
         _______, _______, _______, _______, _______, _______,                            _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______,                            _______, _______, _______, _______, _______, _______,
         _______, GUI_A  , ALT_S  , SFT_D  , CTL_F  , _______,                            _______, CTL_J  , SFT_K  , ALT_L  , GUI_SCLN,_______,
@@ -46,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_ADJUST] = LAYOUT(
         _______, _______, _______, _______, _______, _______,                            _______, _______, _______, _______, _______, _______,
         _______, _______, GAMES  , _______, _______, _______,                            _______, _______, _______, _______, DM_PLY1, DM_REC1,
-        RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, _______, _______,                            HMR    , KC_VOLD, KC_MUTE, KC_VOLU, DM_PLY2, DM_REC2,
+        RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, _______, _______,                            HRM    , KC_VOLD, KC_MUTE, KC_VOLU, DM_PLY2, DM_REC2,
         RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, _______, CG_TOGG,                            _______, KC_MPRV, KC_MPLY, KC_MNXT, _______, DM_RSTP,
                           _______, _______, _______, _______, _______,          _______, _______, _______, _______, _______
     ),
@@ -70,8 +70,8 @@ char *get_layer_name(int layer) {
         case _BASE:
             return "Base ";
 
-        case _HMR:
-            return "HMR  ";
+        case _HRM:
+            return "HRM  ";
         case _GAMES:
             return "Games";
         case _RAISE:
