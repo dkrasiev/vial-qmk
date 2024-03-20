@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_LOWER] = LAYOUT(
         KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  , KC_F6  ,                            KC_F7  , KC_F8  , KC_F9  , KC_F10 , KC_F11 , KC_F12 ,
         _______, _______, _______, KC_PGUP, _______, KC_INS ,                            _______, _______, _______, _______, _______, _______,
-        _______, _______, KC_HOME, KC_PGDN, KC_END , KC_ENT ,                            KC_LEFT, KC_DOWN, KC_UP  , KC_RIGHT,_______, _______,
+        _______, NUM    , KC_HOME, KC_PGDN, KC_END , KC_ENT ,                            KC_LEFT, KC_DOWN, KC_UP  , KC_RIGHT,_______, _______,
         _______, _______, PREVWRD, KC_CAPS, NEXTWRD, KC_DEL ,                            KC_PSCR, _______, _______, _______, _______, _______,
                           QK_BOOT, _______, _______, _______, _______,          _______, ADJUST , _______, _______, _______
     ),
@@ -47,8 +47,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______, _______,                            _______, _______, _______, _______, _______, _______,
         _______, _______, GAMES  , _______, _______, _______,                            _______, _______, _______, _______, DM_PLY1, DM_REC1,
         RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, _______, _______,                            HRM    , KC_VOLD, KC_MUTE, KC_VOLU, DM_PLY2, DM_REC2,
-        RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, _______, CG_TOGG,                            _______, KC_MPRV, KC_MPLY, KC_MNXT, _______, DM_RSTP,
+        RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, _______, CG_TOGG,                            NUM    , KC_MPRV, KC_MPLY, KC_MNXT, _______, DM_RSTP,
                           _______, _______, _______, _______, _______,          _______, _______, _______, _______, _______
+    ),
+
+    [_NUM] = LAYOUT(
+        _______, _______, _______, _______, _______, _______,                            _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______,                            _______, KC_7   , KC_8   , KC_9   , _______, _______,
+        _______, _______, _______, _______, _______, _______,                            _______, KC_4   , KC_5   , KC_6   , _______, _______,
+        _______, _______, _______, _______, _______, _______,                            _______, KC_1   , KC_2   , KC_3   , _______, _______,
+                          _______, _______, _______, _______, _______,          _______, _______, KC_0   , _______, _______
     ),
 };
 
@@ -74,6 +82,9 @@ char *get_layer_name(int layer) {
             return "HRM  ";
         case _GAMES:
             return "Games";
+        case _NUM:
+            return "Num  ";
+
         case _RAISE:
             return "Raise";
         case _LOWER:
@@ -99,8 +110,6 @@ char *get_layer_name(int layer) {
             return "Ten  ";
         case _ELEVEN:
             return "Elevn";
-        case _TWELVE:
-            return "Twlve";
         default:
             return "Undef";
     }

@@ -1,6 +1,8 @@
 #pragma once
 #include "quantum.h"
 
+// TODO: вынести на уровень раскладки (keyboards/ergohaven/k02/keymaps/dkrasiev/config.h)
+
 #define _BASE   0
 
 #define _HRM    1
@@ -15,22 +17,28 @@
 #define _NINE   9
 #define _TEN    10
 #define _ELEVEN 11
-#define _TWELVE 12
-#define _LOWER  13
 
-#define _RAISE  14
-#define _ADJUST 15
+#define _LOWER  12
+#define _RAISE  13
+#define _ADJUST 14
 
-#define BASE DF(_BASE)
-#define HRM TG(_HRM)
-#define GAMES TG(_GAMES)
-#define RAISE MO(_RAISE)
-#define LOWER MO(_LOWER)
+#define _NUM    15
+
+#define BASE   DF(_BASE)
+
+#define HRM    TG(_HRM)
+#define GAMES  TG(_GAMES)
+#define NUM    MO(_NUM)
+
+#define RAISE  MO(_RAISE)
+#define LOWER  MO(_LOWER)
 #define ADJUST MO(_ADJUST)
+
+#define LANG   LGUI(KC_SPC)
+#define SEARCH LALT(KC_SPC)
+
 #define PREVWRD LCTL(KC_LEFT)
 #define NEXTWRD LCTL(KC_RIGHT)
-#define LANG LGUI(KC_SPC)
-#define SEARCH LALT(KC_SPC)
 #define CT_Q LCTL_T(KC_Q)
 #define CT_CM RCTL_T(KC_COMM)
 #define SF_Z LSFT_T(KC_Z)
@@ -46,9 +54,9 @@
 #define CTL_F LCTL_T(KC_F)
 
 // Right-hand home row mods
-#define CTL_J RCTL_T(KC_J)
-#define SFT_K RSFT_T(KC_K)
-#define ALT_L LALT_T(KC_L)
+#define CTL_J    RCTL_T(KC_J)
+#define SFT_K    RSFT_T(KC_K)
+#define ALT_L    LALT_T(KC_L)
 #define GUI_SCLN RGUI_T(KC_SCLN)
 
 enum custom_keycodes {
