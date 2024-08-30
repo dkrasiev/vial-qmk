@@ -205,9 +205,9 @@ void housekeeping_task_kb(void) {
 
 static const char* PROGMEM LAYER_NAME[] =   {
     "Base ",
-    "Lower",
-    "Raise",
-    "Adjst",
+    "HRM  ",
+    "Games",
+    "Third",
     "Four ",
     "Five ",
     "Six  ",
@@ -217,16 +217,16 @@ static const char* PROGMEM LAYER_NAME[] =   {
     "Ten  ",
     "Elevn",
     "Twlve",
-    "Thrtn",
-    "Frtn ",
-    "Fiftn",
+    "Lower",
+    "Raise",
+    "Adjst",
 };
 
 static const char* PROGMEM LAYER_UPPER_NAME[] =   {
     "BASE ",
-    "LOWER",
-    "RAISE",
-    "ADJST",
+    "HRM  ",
+    "GAMES",
+    "THIRD",
     "FOUR ",
     "FIVE ",
     "SIX  ",
@@ -236,9 +236,9 @@ static const char* PROGMEM LAYER_UPPER_NAME[] =   {
     "TEN  ",
     "ELEVN",
     "TWLVE",
-    "THRTN",
-    "FRTN ",
-    "FIFTN",
+    "LOWER",
+    "RAISE",
+    "ADJST",
 };
 
 const char* layer_name(int layer) {

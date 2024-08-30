@@ -3,22 +3,23 @@
 
 #define EH_VERSION_STR "v3.6"
 
-#define _BASE 0
-#define _LOWER 1
-#define _RAISE 2
-#define _ADJUST 3
-#define _FOUR 4
-#define _FIVE 5
-#define _SIX 6
-#define _SEVEN 7
-#define _EIGHT 8
-#define _NINE 9
-#define _TEN 10
+// my layers
+#define _BASE   0
+#define _HRM    1
+#define _GAMES  2
+#define _THIRD  3
+#define _FOUR   4
+#define _FIVE   5
+#define _SIX    6
+#define _SEVEN  7
+#define _EIGHT  8
+#define _NINE   9
+#define _TEN    10
 #define _ELEVEN 11
 #define _TWELVE 12
-#define _THIRTEEN 13
-#define _FOURTEEN 14
-#define _FIFTEEN 15
+#define _LOWER  13
+#define _RAISE  14
+#define _ADJUST 15
 
 #define BASE      DF(_BASE)
 #define RAISE     MO(_RAISE)
@@ -29,6 +30,22 @@
 #define CTRLUP    LCTL(KC_UP)
 #define CTRLDN    LCTL(KC_DOWN)
 #define LANG      LALT(KC_LSFT)
+
+#define HRM   TG(_HRM)
+#define GAMES TG(_GAMES)
+
+// Home Row Mods
+// Left-hand home row mods
+#define GUI_A LGUI_T(KC_A)
+#define ALT_S LALT_T(KC_S)
+#define SFT_D LSFT_T(KC_D)
+#define CTL_F LCTL_T(KC_F)
+
+// Right-hand home row mods
+#define CTL_J RCTL_T(KC_J)
+#define SFT_K RSFT_T(KC_K)
+#define ALT_L LALT_T(KC_L)
+#define GUI_SCLN RGUI_T(KC_SCLN)
 
 #define CT_Q      LCTL_T(KC_Q)
 #define CT_CM     RCTL_T(KC_COMM)
